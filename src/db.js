@@ -31,7 +31,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring:⭐
 
-const { Videogames  } = sequelize.models;
+const { Videogames, Users  } = sequelize.models;
 
 //🧡❤🧡❤🧡❤🧡❤🧡❤para ver como estan los modelos hago un console.log de sequelize.models🧡❤🧡❤🧡❤🧡❤🧡❤🧡❤🧡❤🧡❤🧡❤
 //console.log("MODELOS:");
