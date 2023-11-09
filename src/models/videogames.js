@@ -9,7 +9,7 @@ module.exports = (sequelize) => {
         },
         name: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
         },
         description: {
             type: DataTypes.STRING,
@@ -48,11 +48,12 @@ module.exports = (sequelize) => {
     
           deleted: {
             type: DataTypes.BOOLEAN,
-            default: false
+            defaultValue: false,
           }
     },
     {
         freezeTableName: true,
         timestamps: false,
     })
+    
 }
