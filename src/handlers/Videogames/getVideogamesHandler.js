@@ -1,7 +1,7 @@
 //const { videogamesRouter } = require("express");
 const { getAllVideogames } = require ("../../controllers/Videogames/getVideogamesController");
 
-//Todos los productos y busqueda por name:
+//⭐Todos los productos y busqueda por name:
 const getVideogamesHandler = async(req, res)=>{
     const { name } = req.query;
     console.log(name);
