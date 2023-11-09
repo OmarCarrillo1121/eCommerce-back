@@ -4,6 +4,8 @@ const { Router } = require('express');
 
 //Agregar rutas:⭐
 //const  = require("./");
+// const videogamesRouter = require("./videogamesRouter");
+const usersRouter = require("./usersRouter");
 const videogamesRouter = require("./videogamesRouter");
 
 
@@ -13,6 +15,8 @@ const mainRouter = Router();
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);⭐
 
+// mainRouter.use("/videogames", videogamesRouter);
+mainRouter.use("/users", usersRouter);
 mainRouter.use("/videogames", videogamesRouter);
 //mainRouter.use("/", );
 
