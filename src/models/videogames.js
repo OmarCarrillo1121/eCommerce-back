@@ -40,7 +40,12 @@ module.exports = (sequelize) => {
             type: DataTypes.FLOAT,
             allowNull: false,
           },
-    
+
+          discount: {
+            type: DataTypes.FLOAT,
+            allowNull: false,
+          },
+
           stock: {//⭐revisar bien si esto despues hay que sacarlo!
             type: DataTypes.INTEGER,
             allowNull: false,
