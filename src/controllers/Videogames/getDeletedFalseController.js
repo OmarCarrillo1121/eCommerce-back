@@ -20,6 +20,7 @@ const getDeletedFalse = async () => {
       developer: product.developer,
       platform: product.platform, 
       price: product.price,
+      discount: product.discount,
       stock: product.stock,
       deleted: product.deleted,
     };
