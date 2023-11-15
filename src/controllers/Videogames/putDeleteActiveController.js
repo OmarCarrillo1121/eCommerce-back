@@ -10,13 +10,13 @@ const putDeleteActive = async (id) => {
   
     // Si el ID ingresado es correcto, verificamos si el usuario ya estaba baneado
     if (product.deleted === false) {
-      return "The product is now removed!";
+      return "Product is not removed.";
     }
   
     // En caso de que no este baneado, lo baneamos
     await product.update({ deleted: false });
   
-    return "Product successfully removed!.";
+    return "Product restored succesfully!.";
   };
   
   module.exports = { putDeleteActive };

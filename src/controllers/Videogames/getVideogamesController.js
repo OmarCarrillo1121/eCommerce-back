@@ -17,7 +17,6 @@ const getVideogamesDB = async ()=>{
             developer: videogame.developer,
             platform: videogame.platform,
             price: videogame.price,
-            discount: videogame.discount,
             stock: videogame.stock,//revisar
             deleted: videogame.deleted//revisar
         };

@@ -44,7 +44,7 @@ videogamesRouter.delete("/:id", deletedProductHandler);//Deshabilita un producto
 //⭐Ruta que busca un producto Videogames por ID:
 videogamesRouter.get("/:id", getVideogamesByIdHandler);//producto por id
 
-videogamesRouter.put("/:id/restore", putProductHandler);//para habilitar los productos desabilitados!
+videogamesRouter.put("/restore/:id", putProductHandler);//para habilitar los productos desabilitados!
 
 videogamesRouter.put("/:id", editProductHandler);//para editar un producto!
 
