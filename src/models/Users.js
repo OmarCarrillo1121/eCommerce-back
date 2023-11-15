@@ -2,52 +2,46 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "Videogames",
+    "Users",
     {
       id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
         primaryKey: true,
-        autoIncrement: true,
+        defaultValue: DataTypes.UUIDV4,
+        allowNull: false,
       },
+
       name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      description: {
+
+      email: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+
       image: {
         type: DataTypes.STRING,
-        allowNull: false,
-      },
-      genre: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      developer: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      platform: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      price: {
-        type: DataTypes.FLOAT,
-        allowNull: false,
-      },
-      discount: {
-        type: DataTypes.FLOAT,
-        allowNull: false,
-        defaultValue: 0,
-      },
-      stock: {
-        //⭐revisar bien si esto despues hay que sacarlo!
-        type: DataTypes.INTEGER,
         allowNull: true,
       },
-      deleted: {
+
+      address: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      rol: {
+        type: DataTypes.STRING,
+        defaultValue: "user",
+      },
+
+      banned: {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
       },
