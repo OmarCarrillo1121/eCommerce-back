@@ -17,7 +17,6 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-
       image: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -27,38 +26,27 @@ module.exports = (sequelize) => {
         allowNull: false,
         defaultValue: 0,
       },
-
       genre: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-
       developer: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-
       platform: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-
       price: {
         type: DataTypes.FLOAT,
         allowNull: false,
       },
-
-      discount: {
-        type: DataTypes.FLOAT,
-        allowNull: false,
-      },
-
       stock: {
         //⭐revisar bien si esto despues hay que sacarlo!
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-
       deleted: {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
