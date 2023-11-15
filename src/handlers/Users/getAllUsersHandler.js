@@ -1,5 +1,5 @@
 const {
-  getAllUsersDB,
+  getAllUsersDB
 } = require("../../controllers/Users/getAllUsersController");
 
 const getAllUsersHandler = async (req, res) => {
