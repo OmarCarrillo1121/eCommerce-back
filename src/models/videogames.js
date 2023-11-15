@@ -21,11 +21,6 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      discount: {
-        type: DataTypes.FLOAT,
-        allowNull: false,
-        defaultValue: 0,
-      },
       genre: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -41,6 +36,11 @@ module.exports = (sequelize) => {
       price: {
         type: DataTypes.FLOAT,
         allowNull: false,
+      },
+      discount: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+        defaultValue: 0,
       },
       stock: {
         //⭐revisar bien si esto despues hay que sacarlo!
