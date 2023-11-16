@@ -4,9 +4,11 @@ const { Router } = require('express');
 
 //Agregar rutas:⭐
 //const  = require("./");
-// const videogamesRouter = require("./videogamesRouter");
 const usersRouter = require("./usersRouter");
 const videogamesRouter = require("./videogamesRouter");
+const bannersRouter = require("./bannersRouter");
+const reviewsRouter = require("./reviewsRouter");
+const ordersRouter = require("./ordersRouter");
 
 
 
@@ -18,6 +20,9 @@ const mainRouter = Router();
 // mainRouter.use("/videogames", videogamesRouter);
 mainRouter.use("/users", usersRouter);
 mainRouter.use("/videogames", videogamesRouter);
+mainRouter.use("/banners", bannersRouter);
+mainRouter.use("/reviews", reviewsRouter);
+mainRouter.use("/orders", ordersRouter);
 //mainRouter.use("/", );
 
 
