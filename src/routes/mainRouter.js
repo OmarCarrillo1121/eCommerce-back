@@ -11,7 +11,6 @@ const reviewsRouter = require("./reviewsRouter");
 const ordersRouter = require("./ordersRouter");
 
 
-
 const mainRouter = Router();
 
 // Configurar los routers
@@ -23,7 +22,6 @@ mainRouter.use("/videogames", videogamesRouter);
 mainRouter.use("/banners", bannersRouter);
 mainRouter.use("/reviews", reviewsRouter);
 mainRouter.use("/orders", ordersRouter);
-//mainRouter.use("/", );
 
 
 
