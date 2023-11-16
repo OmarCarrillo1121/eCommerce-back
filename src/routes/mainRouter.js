@@ -8,8 +8,7 @@ const usersRouter = require("./usersRouter");
 const videogamesRouter = require("./videogamesRouter");
 const bannersRouter = require("./bannersRouter");
 const reviewsRouter = require("./reviewsRouter");
-// const ordersRouter = require("./ordersRouter");
-
+const ordersRouter = require("./ordersRouter");
 
 
 const mainRouter = Router();
@@ -22,8 +21,7 @@ mainRouter.use("/users", usersRouter);
 mainRouter.use("/videogames", videogamesRouter);
 mainRouter.use("/banners", bannersRouter);
 mainRouter.use("/reviews", reviewsRouter);
-// mainRouter.use("/orders", ordersRouter);
-//mainRouter.use("/", );
+mainRouter.use("/orders", ordersRouter);
 
 
 
