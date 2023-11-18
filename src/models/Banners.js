@@ -2,42 +2,27 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "Users",
+    "Banners",
     {
       id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
         primaryKey: true,
-        defaultValue: DataTypes.UUIDV4,
+        autoIncrement: true,
       },
 
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-
-      email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-
-      password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-
-      image: {
+      title: {
         type: DataTypes.STRING,
         allowNull: true,
       },
 
-      address: {
+      logotypeUrl: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
       },
 
-      rol: {
+      backgroundUrl: {
         type: DataTypes.STRING,
-        defaultValue: "user",
+        allowNull: false,
       },
 
       banned: {

@@ -4,6 +4,7 @@ const { Router } = require("express");
 const getUsersHandler = require("../handlers/Users/getUsersHandler");
 const getAllUsersHandler = require("../handlers/Users/getAllUsersHandler");
 const getBannedUsersHandler = require("../handlers/Users/getBannedUsersHandler");
+const searchUserByNameHandler = require("../handlers/Users/searchUserByNameHandler");
 const getUserByIdHandler = require("../handlers/Users/getUserByIdHandler");
 const createUsersHandler = require("../handlers/Users/createUsersHandler");
 const banUserHandler = require("../handlers/Users/banUserHandler");
@@ -16,6 +17,7 @@ const usersRouter = Router();
 usersRouter.get("/", getUsersHandler);
 usersRouter.get("/all", getAllUsersHandler);
 usersRouter.get("/disabled", getBannedUsersHandler);
+usersRouter.get("/search", searchUserByNameHandler);
 usersRouter.get("/:id", getUserByIdHandler);
 usersRouter.post("/", createUsersHandler)
 usersRouter.delete("/:id", banUserHandler)
