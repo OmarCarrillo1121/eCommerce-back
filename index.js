@@ -1,5 +1,6 @@
 const server = require("./src/server");
 const { conn } = require("./src/db");
+const PORT = process.env.PORT || 3001;
 
 //⭐const {} = require ("");
 

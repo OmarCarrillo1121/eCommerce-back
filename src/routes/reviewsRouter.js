@@ -5,6 +5,7 @@ const getGameReviewsHandler = require("../handlers/Reviews/getGameReviewsHandler
 const getReviewByIdHandler = require("../handlers/Reviews/getReviewByIdHandler");
 const getAllReviewsHandler = require("../handlers/Reviews/getAllReviewsHandler");
 const getDisabledReviewsHandler = require("../handlers/Reviews/getDisabledReviewsHandler");
+const getEnabledReviewsHandler = require("../handlers/Reviews/getEnabledReviewsHandler");
 const getUserReviewsHandler = require("../handlers/Reviews/getUserReviewsHandler");
 const createReviewHandler = require("../handlers/Reviews/createReviewHandler");
 const banReviewHandler = require("../handlers/Reviews/banReviewHandler");
@@ -16,6 +17,7 @@ const reviewsRouter = Router();
 // definimos rutas
 reviewsRouter.get("/all", getAllReviewsHandler);
 reviewsRouter.get("/disabled", getDisabledReviewsHandler);
+reviewsRouter.get("/enabled", getEnabledReviewsHandler);
 reviewsRouter.get("/:reviewId", getReviewByIdHandler);
 reviewsRouter.get("/videogame/:id", getGameReviewsHandler);
 reviewsRouter.get("/user/:id", getUserReviewsHandler);
