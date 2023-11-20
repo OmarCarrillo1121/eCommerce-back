@@ -15,9 +15,9 @@ const usersRouter = Router();
 
 // definimos rutas
 usersRouter.get("/", getUsersHandler);
+usersRouter.get("/search/name", searchUserByNameHandler);
 usersRouter.get("/all", getAllUsersHandler);
 usersRouter.get("/disabled", getBannedUsersHandler);
-usersRouter.get("/search", searchUserByNameHandler);
 usersRouter.get("/:id", getUserByIdHandler);
 usersRouter.post("/", createUsersHandler)
 usersRouter.delete("/:id", banUserHandler)
