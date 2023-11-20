@@ -13,16 +13,19 @@ const ordersRouter = require("./ordersRouter");
 
 const mainRouter = Router();
 
+//  Ruta Principal
+mainRouter.get("/", (req, res) => {
+    res.send('Bienvenidos al Backend de eCommerce');
+  });
+
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);⭐
 
 // mainRouter.use("/videogames", videogamesRouter);
+
 mainRouter.use("/users", usersRouter);
 mainRouter.use("/videogames", videogamesRouter);
 mainRouter.use("/banners", bannersRouter);
 mainRouter.use("/reviews", reviewsRouter);
 mainRouter.use("/orders", ordersRouter);
-
-
-
 module.exports = mainRouter;
