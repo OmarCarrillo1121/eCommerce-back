@@ -30,6 +30,15 @@ module.exports = (sequelize) => {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW,
       },
+
+      userId: {
+        type: DataTypes.UUIDV4,
+        allowNull: false,
+        references: {
+          model: "Users",
+          key: "id",
+        },
+      },
     },
     {
       freezeTableName: true,
