@@ -9,6 +9,7 @@ const createVideogamesDB = async (
   developer,
   platform,
   price,
+  discount,
   stock
 ) => {
   const newProduct = await Videogames.create({
@@ -19,6 +20,7 @@ const createVideogamesDB = async (
     developer,
     platform,
     price,
+    discount,
     stock,
   });
   return newProduct;

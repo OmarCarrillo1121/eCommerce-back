@@ -5,7 +5,7 @@ const { createVideogamesDB } = require("../../controllers/Videogames/createVideo
  const createVideogamesHandler = async(req, res)=>{
     const { name, description, image, genre, developer, platform, price, stock } = req.body;
     try {
-        const createProduct = await createVideogamesDB(name, description, image, genre, developer, platform, price, stock);
+        const createProduct = await createVideogamesDB(name, description, image, genre, developer, platform, price, stock, discount);
         res.status(201).json(createProduct);
 
     } catch(error){

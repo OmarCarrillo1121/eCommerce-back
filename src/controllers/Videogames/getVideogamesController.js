@@ -18,6 +18,7 @@ const getVideogamesDB = async ()=>{
             platform: videogame.platform,
             price: videogame.price,
             stock: videogame.stock,//revisar
+            discount: videogame.discount,
             deleted: videogame.deleted//revisar
         };
     });

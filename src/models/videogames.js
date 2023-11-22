@@ -45,6 +45,11 @@ module.exports = (sequelize) => {
             type: DataTypes.INTEGER,
             allowNull: false,
           },
+
+          discount: {
+            type: DataTypes.FLOAT,
+            allowNull: false,
+          },
     
           deleted: {
             type: DataTypes.BOOLEAN,
