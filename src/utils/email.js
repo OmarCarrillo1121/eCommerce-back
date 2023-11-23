@@ -8,18 +8,20 @@ let transporter = nodemailer.createTransport({
   },
 });
 
-let mailOptions = {
-  from: "ft42b.pf05@gmail.com",
-  to: "kangsebastian43@gmail.com",
-  subject: "prueba nodemailer",
-  text: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+const sendMail = async (to, subject, html) => {
+  let mailOptions = {
+    from: "ft42b.pf05@gmail.com",
+    to,
+    subject,
+    html,
+  };
+
+  try {
+    const response = await transporter.sendMail(mailOptions);
+    return response;
+  } catch (error) {
+    throw error;
+  }
 };
 
-transporter
-  .sendMail(mailOptions)
-  .then(function (response) {
-    console.log("Email sent!!!", response);
-  })
-  .catch(function (error) {
-    console.log("Error: ", error);
-  });
+module.exports = { sendMail };

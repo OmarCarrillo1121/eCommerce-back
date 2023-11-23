@@ -1,16 +1,22 @@
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
-const pg = require('pg');
+const pg = require("pg");
 const fs = require("fs");
 const path = require("path");
 //const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
-
+/* const sequelize = new Sequelize(
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/videogames`,
+  {
+    logging: false, // set to console.log to see the raw SQL queries
+    native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  }
+); */
 
 const sequelize = new Sequelize(process.env.POSTGRES_URL, {
   dialect: "postgres",
   logging: false,
-  ssl: true,  // Siempre establecido en true
+  ssl: true, // Siempre establecido en true
   dialectOptions: {
     ssl: {
       require: true,
@@ -55,9 +61,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring:⭐
 
-
 const { Videogames, Users, Banners, Reviews, Orders } = sequelize.models;
-
 
 //🧡❤🧡❤🧡❤🧡❤🧡❤para ver como estan los modelos hago un console.log de sequelize.models🧡❤🧡❤🧡❤🧡❤🧡❤🧡❤🧡❤🧡❤🧡❤
 //console.log("MODELOS:");
@@ -65,18 +69,19 @@ const { Videogames, Users, Banners, Reviews, Orders } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews):⭐;
-Users.hasMany(Reviews, { foreignKey: 'userId' });
-Reviews.belongsTo(Users, { foreignKey: 'userId' });
+Users.hasMany(Reviews, { foreignKey: "userId" });
+Reviews.belongsTo(Users, { foreignKey: "userId" });
 
-Videogames.hasMany(Reviews, { foreignKey: 'videogameId' });
-Reviews.belongsTo(Videogames, { foreignKey: 'videogameId' });
+Videogames.hasMany(Reviews, { foreignKey: "videogameId" });
+Reviews.belongsTo(Videogames, { foreignKey: "videogameId" });
 
-Orders.belongsTo(Users, { foreignKey: 'userId' });
-Orders.belongsToMany(Videogames, { through: 'OrderProducts', foreignKey: 'orderId' });
-
+Orders.belongsTo(Users, { foreignKey: "userId" });
+Orders.belongsToMany(Videogames, {
+  through: "OrderProducts",
+  foreignKey: "orderId",
+});
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   conn: sequelize, // para importart la conexión { conn } = require('./db.js');
- 
 };
