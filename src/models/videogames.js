@@ -49,6 +49,7 @@ module.exports = (sequelize) => {
           discount: {
             type: DataTypes.FLOAT,
             allowNull: false,
+            defaultValue: 0,
           },
     
           deleted: {
