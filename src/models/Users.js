@@ -35,12 +35,17 @@ module.exports = (sequelize) => {
         allowNull: true,
       },
 
-      rol: {
+      isAdmin: {
         type: DataTypes.STRING,
-        defaultValue: "user",
+        defaultValue: false,
       },
 
       banned: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+      },
+
+      google: {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
       },
