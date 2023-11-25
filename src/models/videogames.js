@@ -15,6 +15,10 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false,
           },
+        discount:{
+          type: DataTypes.FLOAT,
+          defaultValue: 0,
+        },
     
           image: {
             type: DataTypes.STRING,
