@@ -8,12 +8,12 @@ const restoreOrder = async (orderId) => {
         throw new Error(`Order with ID ${id} not found.`);
     }
 
-    // si el id ingresado es correcto, verificamos si la orden ya esta cancelada
+    // si el id ingresado es correcto, verificamos si la orden no esta cancelada
     if (order.cancelled === false) {
         return "Order is not cancelled."
     };
 
-    // En caso de que no este cancelada, la cancelamos
+    // En caso de que  este cancelada, la restauramos!
     await order.update({ cancelled: false });
 
     return "Order restored succesfully";
