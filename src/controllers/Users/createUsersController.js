@@ -1,5 +1,6 @@
 // Controller que nos permite crear un user
 const { Users } = require("../../db");
+const bcrypt = require('bcryptjs');
 const { sendMail } = require("../../utils/email");
 
 const createUsersDB = async (name, email, password, image, address) => {
