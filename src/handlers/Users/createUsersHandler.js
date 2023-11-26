@@ -3,7 +3,7 @@ const {
 } = require("../../controllers/Users/createUsersController");
 
 const createUsersHandler = async (req, res) => {
-  const { name, email, password, image, address } = req.body;
+  const { name, email, password, image, address, google } = req.body;
 
   //VALIDACIONES
   try {
@@ -12,7 +12,8 @@ const createUsersHandler = async (req, res) => {
       email,
       password,
       image,
-      address
+      address,
+      google
     );
     res.status(201).json(createUser);
   } catch (error) {

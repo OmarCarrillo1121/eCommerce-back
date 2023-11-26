@@ -1,9 +1,9 @@
 // Controller que nos permite crear un user
 const { Users } = require("../../db");
-const bcrypt = require('bcryptjs');
+const bcrypt = require("bcryptjs");
 const { sendMail } = require("../../utils/email");
 
-const createUsersDB = async (name, email, password, image, address) => {
+const createUsersDB = async (name, email, password, image, address, google) => {
   // Verificamos si el usuario ya existe por su email
   const existingUser = await Users.findOne({ where: { email } });
 
@@ -30,6 +30,7 @@ const createUsersDB = async (name, email, password, image, address) => {
     password: hashedPassword,
     image,
     address,
+    google,
   };
 
   // Si el usuario no existe, lo creamos
