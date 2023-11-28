@@ -3,7 +3,7 @@ const mercadopago = require("mercadopago");
 
 //!Credenciales del .env
 const ACCESS_TOKEN= "TEST-7120791930180798-112715-b8bed09589c90708ab8b212544f746b9-1555519585"
-const LOCALHOST =['http://localhost:3000', 'https://ecomercefrom2.vercel.app'];
+const LOCALHOST = "http://localhost:3000/" //Del front//! EN el deployd CAMBIARLO
 
 const mercadoPago = Router();
 

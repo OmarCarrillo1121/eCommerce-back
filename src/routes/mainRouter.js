@@ -9,7 +9,7 @@ const videogamesRouter = require("./videogamesRouter");
 const bannersRouter = require("./bannersRouter");
 const reviewsRouter = require("./reviewsRouter");
 const ordersRouter = require("./ordersRouter");
-const mercadoPago = require("./mercadoPago");// edward
+const mercadoPago = require("./mercadoPago");
 
 
 const mainRouter = Router();
