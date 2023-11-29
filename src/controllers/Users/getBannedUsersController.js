@@ -18,6 +18,8 @@ const getBannedUsersDB = async () => {
       address: user.address,
       rol: user.rol,
       banned: user.banned,
+      isAdmin: user.isAdmin,
+      google: user.google,
     };
   });
 
