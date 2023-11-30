@@ -1,33 +1,21 @@
-//const { videogamesRouter } = require("express");
+// const { videogamesRouter } = require("express");
+const { getAllVideogames } = require("../../controllers/Videogames/getVideogamesController");
 
-const { createVideogamesDB } = require("../../controllers/Videogames/createVideogamesController");
-
-const createVideogamesHandler = async (req, res) => {
-  const { name, description, image, genre, developer, platform, price, discount, stock } = req.body;
-  
+// ⭐ Todos los productos y búsqueda por name:
+const getVideogamesHandler = async (req, res) => {
+  const { name } = req.query;
+  console.log(name);
   try {
-    // Asegúrate de que solo se proporcione un precio
-    if (!price || isNaN(parseFloat(price)) || discount < 0 || discount > 100) {
-      throw new Error("Invalid price or discount value");
+    if (name) {
+      const response = await getAllVideogames(name); // Devuelvo el producto que se encontró por nombre
+      return res.status(200).json(response);
     }
-
-    const createProduct = await createVideogamesDB(
-      name,
-      description,
-      image,
-      genre,
-      developer,
-      platform,
-      price,
-      discount,
-      stock
-    );
-
-    res.status(201).json(createProduct);
+    const getAllProduct = await getAllVideogames(); // Todos los productos
+    res.status(200).json(getAllProduct);
   } catch (error) {
     res.status(400).json({ error: error.message });
     console.log(error);
   }
 };
 
-module.exports = createVideogamesHandler;
+module.exports = getVideogamesHandler;

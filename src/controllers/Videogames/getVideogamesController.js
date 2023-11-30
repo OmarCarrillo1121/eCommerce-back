@@ -6,20 +6,20 @@ const getVideogamesDB = async () => {
   const allVideogamesDB = await Videogames.findAll();
 
   // ⭐ Hago un map para estructurar la info que viene de la db
-  const productEstructurados = allVideogamesDB.map((videogame) => {
+  const productEstructurados = allVideogamesDB.map((product) => {
     return {
-      id: videogame.id,
-      name: videogame.name,
-      description: videogame.description,
-      image: videogame.image,
-      genre: videogame.genre,
-      developer: videogame.developer,
-      platform: videogame.platform,
-      originalPrice: videogame.originalPrice,
-      price: videogame.price,
-      stock: videogame.stock,
-      discount: videogame.discount,
-      deleted: videogame.deleted,
+      id: product.id,
+      name: product.name,
+      description: product.description, 
+      image: product.image,
+      genre: product.genre,
+      developer: product.developer,
+      platform: product.platform, 
+      originalPrice: product.originalPrice,
+      price: product.price,
+      stock: product.stock,
+      discount: product.discount,
+      deleted: product.deleted,
     };
   });
   return productEstructurados;
