@@ -39,7 +39,12 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false,
           },
-    
+
+          originalPrice: {
+            type: DataTypes.FLOAT,
+            allowNull: false,
+          },      
+
           price: {
             type: DataTypes.FLOAT,
             allowNull: false,
@@ -65,5 +70,4 @@ module.exports = (sequelize) => {
         freezeTableName: true,
         timestamps: false,
     })
-    
 }

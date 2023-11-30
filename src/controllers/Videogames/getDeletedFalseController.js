@@ -19,6 +19,7 @@ const getDeletedFalse = async () => {
       genre: product.genre,
       developer: product.developer,
       platform: product.platform, 
+      originalPrice: product.originalPrice,
       price: product.price,
       stock: product.stock,
       discount: product.discount,
