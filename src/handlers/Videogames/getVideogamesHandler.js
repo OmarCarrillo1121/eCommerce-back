@@ -1,19 +1,33 @@
 //const { videogamesRouter } = require("express");
-const { getAllVideogames } = require ("../../controllers/Videogames/getVideogamesController");
 
-//⭐Todos los productos y busqueda por name:
-const getVideogamesHandler = async(req, res)=>{
-    const { name } = req.query;
-    console.log(name);
-    try{
-        if (name){
-            const response = await getAllVideogames(name); //devuelvo el producto q se encontro por nombre!
-            return res.status(200).json(response);
-        } const getAllProduct = await getAllVideogames();//todos los productos
-        res.status(200).json(getAllProduct);
-    } catch (error){
-        res.status(400).json({error: error.message});
-        console.log(error);
+const { createVideogamesDB } = require("../../controllers/Videogames/createVideogamesController");
+
+const createVideogamesHandler = async (req, res) => {
+  const { name, description, image, genre, developer, platform, price, discount, stock } = req.body;
+  
+  try {
+    // Asegúrate de que solo se proporcione un precio
+    if (!price || isNaN(parseFloat(price)) || discount < 0 || discount > 100) {
+      throw new Error("Invalid price or discount value");
     }
+
+    const createProduct = await createVideogamesDB(
+      name,
+      description,
+      image,
+      genre,
+      developer,
+      platform,
+      price,
+      discount,
+      stock
+    );
+
+    res.status(201).json(createProduct);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+    console.log(error);
+  }
 };
-module.exports= getVideogamesHandler;
+
+module.exports = createVideogamesHandler;
